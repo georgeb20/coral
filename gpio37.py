@@ -7,6 +7,7 @@ try:
     solenoid.write(True)
     time.sleep(1)
     solenoid.write(False)
+    time.sleep(1)
 finally:
   solenoid.write(False)
   solenoid.close()
