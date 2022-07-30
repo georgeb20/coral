@@ -6,6 +6,7 @@ try:
   while True:
     solenoid.write(True)
     time.sleep(1)
+    solenoid.write(False)
 finally:
   solenoid.write(False)
   solenoid.close()
