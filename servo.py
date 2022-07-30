@@ -12,7 +12,8 @@ while True:
         time.sleep(0.25)  # On for 1/4 second
         piezo.duty_cycle = 0  # Off
         time.sleep(0.05)  # Pause between notes
-    time.sleep(0.5)import time
+    time.sleep(0.5)
+import time
 import board
 import pwmio
 
