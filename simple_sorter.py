@@ -27,7 +27,7 @@ def main():
     interpreter.allocate_tensors()
     labels = read_label_file(labelPath)
 
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
     while cap.isOpened():
         ret, frame = cap.read()
         if not ret:
