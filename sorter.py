@@ -60,6 +60,7 @@ def on_new_frame(cv_mat, interpreter, mean, sliding_window):
             solenoid.write(True)
         else:
             solenoid.write(False)
+        jam = input("Press to continue")
         # Here you can actuate the sorting end-effector through GPIO, etc.
 
 
