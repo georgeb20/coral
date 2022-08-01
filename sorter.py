@@ -1,5 +1,5 @@
 #7/31/2022
-from numpy import interp
+from numpy import mean as np_mean
 from periphery import GPIO
 import utils
 from PIL import Image
@@ -31,7 +31,7 @@ def is_good_photo(img, width, height, mean, sliding_window):
 
 
     if len(sliding_window) > 30:
-        mean[0] = utils.mean_arr(sliding_window)
+        mean[0] = np_mean(sliding_window)
         sliding_window.clear()
 
     else:
