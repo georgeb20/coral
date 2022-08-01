@@ -8,8 +8,7 @@ from pycoral.utils.dataset import read_label_file
 from pycoral.utils.edgetpu import make_interpreter
 from pycoral.adapters import common
 from pycoral.adapters import classify
-import scipy
-
+from scipy import ndimage
 
 sendPin = 13
 solenoid = GPIO("/dev/gpiochip2", sendPin, "out")  # pin 37
@@ -27,7 +26,7 @@ labelPath = 'lucky_charm_labels.txt'
 # this is the logic that determines if there is a sorting target in the center of the frame
 def is_good_photo(img, width, height, mean, sliding_window):
     threshold = 4.5
-    center = scipy.ndimage.measurements.center_of_mass(img)
+    center = ndimage.measurements.center_of_mass(img)
     detection_zone_avg = (center[0] + center[1]) / 2
 
 
